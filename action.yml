@@ -1,0 +1,19 @@
+name: 'Code Owners Validator'
+description: 'Validates globs of CODEOWNERS file and validates coverage of source folders'
+author: 'Rufat Khaslarov / Dzmitry Patsiahevich'
+branding:
+  icon: award
+  color: orange
+inputs:
+  path:
+    required: true
+    description: 'File Path to Code Owners file'
+    default: ./.github/CODEOWNERS
+  folders:
+    required: true
+    description: 'Folders that should be tracked'
+    default: |
+      src
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
